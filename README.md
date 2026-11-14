@@ -2,7 +2,7 @@
 
 The live website for a 3-instructor driving school in London, with a private dashboard where instructors manage the site themselves.
 
-**Live site: [goodluckmehmetdrivingschool.co.uk](https://goodluckmehmetdrivingschool.co.uk)**
+**Live site: [goodluckmehmetdrivingschool.co.uk](https://goodluckmehmetdrivingschool.co.uk)**, now at around 200 visitors a month (up 45% since launch in June 2026).
 
 ![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?logo=supabase&logoColor=white) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white)
 
