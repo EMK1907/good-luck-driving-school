@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Instructor login for Good Luck Driving School." />
+    <title>Instructor Login | Good Luck Driving School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header is-scrolled" data-header>
+      <nav class="nav shell" aria-label="Instructor navigation">
+        <a class="brand" href="index.html#home" aria-label="Good Luck Driving School home">
+          <img src="assets/brand/good-luck-logo.png" alt="" aria-hidden="true" class="brand-logo" />
+          <span>
+            <strong>Good Luck</strong>
+            <small>Driving School</small>
+          </span>
+        </a>
+
+        <div class="nav-links auth-nav">
+          <a href="index.html#home">Back to homepage</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="auth-hero">
+        <div class="shell auth-layout">
+          <div class="section-copy reveal">
+            <p class="eyebrow">Instructor Area</p>
+            <h1>Instructor Login</h1>
+            <p>Sign in to access the Good Luck Driving School instructor dashboard.</p>
+          </div>
+
+          <form class="contact-form auth-card reveal" data-login-form>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" autocomplete="current-password" required />
+            </label>
+            <p class="auth-status" data-auth-status hidden></p>
+            <button class="button primary" type="submit">Login</button>
+            <p class="form-note">
+              <button class="text-link link-button" type="button" data-forgot-password>Forgot your password?</button>
+              Enter your email above, then click this to get a reset link.
+            </p>
+            <p class="form-note">
+              This area is for Good Luck Driving School instructors only.
+              <a class="text-link" href="index.html#home">Return to the public website</a>.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="instructor-auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

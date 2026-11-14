@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Protected instructor dashboard for Good Luck Driving School." />
+    <title>Instructor Dashboard | Good Luck Driving School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header is-scrolled" data-header>
+      <nav class="nav shell" aria-label="Instructor navigation">
+        <a class="brand" href="index.html#home" aria-label="Good Luck Driving School home">
+          <img src="assets/brand/good-luck-logo.png" alt="" aria-hidden="true" class="brand-logo" />
+          <span>
+            <strong>Good Luck</strong>
+            <small>Driving School</small>
+          </span>
+        </a>
+
+        <div class="nav-links auth-nav">
+          <a href="index.html#home">Public website</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" data-dashboard>
+      <section class="auth-hero dashboard-hero">
+        <div class="shell">
+          <div class="dashboard-header reveal">
+            <div>
+              <p class="eyebrow">Instructor Dashboard</p>
+              <h1>Welcome back</h1>
+              <p>Logged in as <strong data-instructor-email>Loading...</strong></p>
+            </div>
+            <button class="button primary" type="button" data-logout>Logout</button>
+          </div>
+
+          <div class="dashboard-panels">
+            <article class="dashboard-panel dashboard-panel-wide reveal" data-gallery-manager>
+              <h2>Gallery Manager</h2>
+              <p>Add, edit and remove passed student photos shown on the public website.</p>
+              <form class="gallery-admin-form" data-gallery-upload-form>
+                <label>
+                  Student photo
+                  <input type="file" name="image" accept="image/*" required />
+                </label>
+                <label>
+                  Caption
+                  <input type="text" name="caption" placeholder="Passed with Good Luck" maxlength="120" required />
+                </label>
+                <button class="button primary" type="submit">Upload photo</button>
+              </form>
+              <p class="auth-status" data-gallery-status hidden></p>
+              <div class="gallery-admin-grid" data-gallery-admin-list aria-label="Uploaded gallery images"></div>
+            </article>
+            <article class="dashboard-panel dashboard-panel-action reveal" data-holiday-panel>
+              <h2>Holiday Mode</h2>
+              <p>
+                When holiday mode is on, your WhatsApp enquiry button is hidden from the public website.
+              </p>
+              <div class="holiday-status">
+                <span>Instructor</span>
+                <strong data-dashboard-instructor-name>Loading...</strong>
+              </div>
+              <div class="holiday-status">
+                <span>Email</span>
+                <strong data-dashboard-instructor-email>Loading...</strong>
+              </div>
+              <div class="holiday-status">
+                <span>Current status</span>
+                <strong data-holiday-status>Loading...</strong>
+              </div>
+              <p class="auth-status" data-auth-status hidden></p>
+              <button class="button primary" type="button" data-holiday-toggle disabled>Loading...</button>
+            </article>
+            <article class="dashboard-panel dashboard-panel-action reveal" data-admin-settings hidden>
+              <h2>Website Pause Mode</h2>
+              <p>Pause or resume the public website and update the message shown on the maintenance page.</p>
+              <div class="holiday-status">
+                <span>Current status</span>
+                <strong data-pause-status>Loading...</strong>
+              </div>
+              <form class="pause-settings-form" data-pause-settings-form>
+                <label class="toggle-field">
+                  <input type="checkbox" name="sitePaused" />
+                  <span>Pause website</span>
+                </label>
+                <label>
+                  Maintenance message
+                  <textarea name="pausedMessage" rows="5" placeholder="We're currently making improvements to our website."></textarea>
+                </label>
+                <p class="auth-status" data-pause-status-message hidden></p>
+                <button class="button primary" type="submit">Save pause settings</button>
+              </form>
+            </article>
+            <article class="dashboard-panel dashboard-panel-action reveal" data-instructor-accounts-panel hidden>
+              <h2>Instructor Accounts</h2>
+              <p>Email an instructor a secure link so they can set or reset their own password.</p>
+              <p class="auth-status" data-instructor-accounts-status hidden></p>
+              <div class="instructor-accounts-list" data-instructor-accounts-list aria-label="Instructor accounts"></div>
+            </article>
+            <article class="dashboard-panel dashboard-panel-wide reveal" data-activity-log-panel hidden>
+              <div class="activity-log-header">
+                <div>
+                  <h2>Activity Log</h2>
+                  <p>Latest dashboard actions from the instructor team.</p>
+                </div>
+                <div class="activity-log-actions">
+                  <button class="button ghost" type="button" data-activity-refresh>Refresh</button>
+                  <button class="button danger" type="button" data-activity-clear>Clear Log</button>
+                </div>
+              </div>
+              <p class="auth-status" data-activity-status hidden></p>
+              <div class="activity-log-list" data-activity-log-list aria-label="Latest dashboard activity"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" data-pause-confirm-modal hidden>
+      <div class="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="pause-confirm-title">
+        <p class="eyebrow">Confirm Website Pause</p>
+        <h2 id="pause-confirm-title" data-confirm-title>Pause the public website?</h2>
+        <p data-confirm-message>
+          The public website will be paused and visitors will see the maintenance page. Instructor login and the
+          dashboard will remain accessible.
+        </p>
+        <div class="confirm-actions">
+          <button class="button ghost" type="button" data-pause-confirm-cancel>Cancel</button>
+          <button class="button primary" type="button" data-pause-confirm-accept data-confirm-accept>Yes, pause website</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="instructor-auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
